@@ -1,8 +1,8 @@
 # #!/bin/bash
-WORDPRESS_DB_HOST="34.69.164.11"
+WORDPRESS_DB_HOST="34.148.150.3"
 WORDPRESS_DB_NAME="team3db"
 WORDPRESS_DB_USER="team3user"
-WORDPRESS_DB_PASSWORD="XKns7hUPD89lbbM0LR8CMOOqS"
+WORDPRESS_DB_PASSWORD="gcpteam3project2023##"
 sudo yum install httpd wget unzip epel-release mysql -y
 sudo yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 sudo yum -y install yum-utils
