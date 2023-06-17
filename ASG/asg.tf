@@ -97,8 +97,3 @@ resource "google_compute_backend_service" "lb_backend" {
   health_checks = [google_compute_http_health_check.lb_health_check.self_link]
 }
 
-resource "google_compute_global_forwarding_rule" "lb_forwarding_rule" {
-  name       = var.asg_config["forwarding_rule_name"]
-  target     = google_compute_url_map.lb_url_map.self_link
-  port_range = "80"
-}
