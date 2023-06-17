@@ -1,6 +1,6 @@
 # #!/bin/bash
 #This line specifies the IP address of the host where the WordPress database is located. In this case, the database is hosted on the IP address "34.148.150.3".
-WORDPRESS_DB_HOST="34.23.161.22"
+WORDPRESS_DB_HOST="35.243.213.0"
 WORDPRESS_DB_NAME="team3db"
 WORDPRESS_DB_USER="team3user"
 WORDPRESS_DB_PASSWORD="gcpteam3project2023##"
