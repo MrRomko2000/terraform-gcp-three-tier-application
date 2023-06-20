@@ -46,7 +46,7 @@ resource "google_compute_instance_template" "team3-template" {
   }
 
   network_interface {
-    network = google_compute_network.globalvpc.self_link
+    network = google_compute_network.vpc-network.self_link
 
     access_config {
     }
@@ -55,7 +55,7 @@ resource "google_compute_instance_template" "team3-template" {
 
 resource "google_compute_firewall" "allow-http" {
   name         = var.asg_config["firewall_name"]
-  network      = google_compute_network.globalvpc.self_link
+  network      = google_compute_network.vpc-network.self_link
 
   allow {
     protocol = "icmp"
@@ -68,32 +68,37 @@ resource "google_compute_firewall" "allow-http" {
 
   source_tags   = [var.asg_config["network_tags"]]
   source_ranges = ["0.0.0.0/0"]
+
+  project                 = "team3terraformproject"
 }
 
-resource "google_compute_http_health_check" "lb_health_check" {
-  name               = var.asg_config["health_check_name"]
-  request_path       = "/"
-  port               = 80
-  check_interval_sec = 10
-  timeout_sec        = 5
-}
 
-resource "google_compute_url_map" "lb_url_map" {
-  name        = var.asg_config["url_map_name"]
-  default_service = google_compute_backend_service.lb_backend.self_link
-}
 
-resource "google_compute_backend_service" "lb_backend" {
-  name                          = var.asg_config["backend_service_name"]
-  port_name                     = "http"
-  protocol                      = "HTTP"
-  timeout_sec                   = 10
-  load_balancing_scheme         = "EXTERNAL"
+
+# resource "google_compute_http_health_check" "lb_health_check" {
+#   name               = var.asg_config["health_check_name"]
+#   request_path       = "/"
+#   port               = 80
+#   check_interval_sec = 10
+#   timeout_sec        = 5
+# }
+
+# resource "google_compute_url_map" "lb_url_map" {
+#   name        = var.asg_config["url_map_name"]
+#   default_service = google_compute_backend_service.lb_backend.self_link
+# }
+
+# resource "google_compute_backend_service" "lb_backend" {
+#   name                          = var.asg_config["backend_service_name"]
+#   port_name                     = "http"
+#   protocol                      = "HTTP"
+#   timeout_sec                   = 10
+#   load_balancing_scheme         = "EXTERNAL"
   
-  backend {
-    group = google_compute_instance_group_manager.gmanager.instance_group
-  }
+#   backend {
+#     group = google_compute_instance_group_manager.gmanager.instance_group
+#   }
   
-  health_checks = [google_compute_http_health_check.lb_health_check.self_link]
-}
+#   health_checks = [google_compute_http_health_check.lb_health_check.self_link]
+# }
 

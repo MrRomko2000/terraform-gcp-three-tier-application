@@ -7,7 +7,7 @@ variable "vm_config" {
     instance_name = "team3-instance"
     machine_type  = "n1-standard-1"
     image         = "centos-cloud/centos-7"
-    firewall_name = "http-fw"
+    firewall_name = "http-firewall"
     network_tags  = "http-server"
   }
 }
@@ -38,7 +38,7 @@ variable "asg_config" {
     machine_type                = "n1-standard-1"
     source_image                = "centos-cloud/centos-7"
     network_tags                = "http-server"
-    firewall_name               = "http-fw"
+    firewall_name               = "http-firewall"
     health_check_name           = "team3-health-check"
     backend_service_name        = "team3-backend-service"
     url_map_name                = "team3-url-map"
