@@ -20,8 +20,8 @@ resource "random_password" "password" {
 
 
 # Create gcp project
-resource "google_project" "fun-team-project-gcp" {
-  name            = "fun-team-project-gcp"
+resource "google_project" "best-team-project-gcp" {
+  name            = "best-team-project-gcp"
   project_id      = random_password.password.result
   billing_account = data.google_billing_account.acct.id
 }
@@ -33,7 +33,7 @@ resource "null_resource" "set-project" {
   }
 
   provisioner "local-exec" {
-    command = "gcloud config set project ${google_project.fun-team-project-gcp.project_id}"
+    command = "gcloud config set project ${google_project.best-team-project-gcp.project_id}"
   }
 }
 

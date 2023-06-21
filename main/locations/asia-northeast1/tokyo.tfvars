@@ -1,6 +1,6 @@
 region = "asia-northeast1"
 
-zone = "asia-northeast1"
+zone = "asia-northeast1-a"
 
 instance_name = "wordpress-london"
 
