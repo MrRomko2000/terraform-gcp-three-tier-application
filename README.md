@@ -8,11 +8,11 @@ ________________________________________________________________________________
 ## 3) Go to Cloud Shell, open Editor
 ## 4) Clone this repository from GitHub. Run command below:
 ```
-cd && git clone git@github.com:alex-dev0ps/fun-team-project-gcp.git
+cd && git clone  MrRomko2000/terraform-gcp-three-tier-application.git
 ```
 __________________________________________________________________________________________________________________________
 ## 5) Setting billing account. Creating the project ID:
-### Please open /fun-team-project-gcp folder. Then open /account folder. To open in terminal of /account, you can right click on /account folder and "open in terminal". You can also run commands below instead:
+### Please open /terraform-gcp-three-tier-application folder. Then open /bill folder. To open in terminal of /bill, you can right click on /bill folder and "open in terminal". You can also run commands below instead:
 ```
 cd ..
 cd account
@@ -31,7 +31,7 @@ ________________________________________________________________________________
 project_name = "team3terraformproject"
 ```
 __________________________________________________________________________________________________________________________
-## 7) Now you are in /team3terraformproject/account. To create the resources you should be in /team3terraformproject/main. Please don't use right click and don't "open in terminal". You should run the following commands instead:
+## 7) Now you are in /team3terraformproject/bill. To create the resources you should be in /team3terraformproject/main. Please don't use right click and don't "open in terminal". You should run the following commands instead:
 ```
 cd ..
 cd project
