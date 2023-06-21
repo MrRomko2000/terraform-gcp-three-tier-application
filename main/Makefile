@@ -28,5 +28,9 @@ build-tokyo:
 destroy-tokyo:
 	terraform workspace new tokyo || terraform workspace select tokyo && terraform init && terraform destroy -var-file locations/asia-northeast1/tokyo.tfvars --auto-approve
 
+all:
+	make iowa && make london && make tokyo && make hongkong
 
 
+destroy-all:
+	make destroy-iowa && make destroy-london && make destroy-tokyo && make destroy-hongkong
